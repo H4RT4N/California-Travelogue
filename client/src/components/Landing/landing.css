@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+
+#landing {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);
+}
+#landing::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 105px;
+  background: linear-gradient(to top, #0059b3, transparent);
+  z-index: 5;
+}
+.landingText, .welcomeText {
+  position: absolute;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Rancho", cursive;
+  color: white;
+  letter-spacing: 10px;
+  font-size: 3em;
+}
+.landingText span {
+  margin-top: -50px;
+  font-size: 5em;
+}
+.welcomeText {
+  top: 57%;
+  font-size: 2em;
+  letter-spacing: 6px;
+  font-weight: 900;
+  color: #013b32;
+  background: white;
+  border-radius: 15px;
+  padding: 5px;
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+.authBtn {
+  position: absolute;
+  top: 60%;
+  text-decoration: none;
+  padding: 8px 30px;
+  background: white;
+  color: #013b32;
+  font-size: 1.2em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+.authBtn:hover, .welcomeText:hover {
+  background: #013b32;
+  color: white;
+}
+#landing img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+#landing img#mountainsFront {
+  bottom: 100px;
+}
+#landing img#mountainsBack {
+  bottom: 120px;
+}
+#landing img#birdL,
+#landing img#birdR {
+  bottom: -500px;
+}
+#landing img#birdL {
+  left: 50%;
+}
+#landing img#birdR {
+  left: -50%;
+}
+#landing img#forestFront {
+  bottom: 100px;
+}
+#landing img#beach {
+  height: 150px;
+}
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  background: url(../../images/wave_blue.png);
+  background-size: 950px, 100px;
+  background-repeat: repeat-x;
+  animation: waveBob 3s ease-in-out infinite;
+}
+@keyframes waveBob {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+.wave#wfront {
+  opacity: 0.8;
+  z-index: 4;
+  background-position-x: 400px;
+  animation-delay: 0.25s;
+}
+.wave#wmid {
+  opacity: 0.5;
+  z-index: 3;
+  background-position-x: 200px;
+  animation-delay: 0.5s;
+}
+.wave#wmid2 {
+  opacity: 0.2;
+  z-index: 2;
+  background-position-x: 100px;
+  animation-delay: 0.75s;
+}
+.wave#wback {
+  opacity: 0.7;
+  z-index: 1;
+  background-position-x: 300px;
+  animation-delay: 1s;
+}
+
+/* MOBILE */
+@media (max-width: 992px) {
+  .landingText {
+    top: auto;
+    font-size: 1.5em;
+  }
+  .landingText span {
+    margin-top: 0;
+    font-size: 2.5em;
+  }
+  .welcomeText {
+    font-size: 1.5em;
+  }
+  #landing a {
+    font-size: 1em;
+  }
+  #landing img#mountainsFront,
+  #landing img#mountainsBack {
+    bottom: 5vh;
+  }
+  #landing img#forestFront {
+    bottom: 4vh;
+  }
+  #landing img#beach {
+    height: 6vh;
+  }
+  #landing img#birdL,
+  #landing img#birdR {
+    bottom: -12vh;
+  }
+  #landing::before {
+    height: 2vh;
+  }
+  .wave {
+    height: 5vh;
+    background-size: 400px, 100px;
+  }
+  /* mobile landscape mode */
+  @media (max-height: 800px) {
+    .landingText {
+      top: 30%;
+    }
+    #landing img#birdL,
+    #landing img#birdR {
+      bottom: -60%;
+    }
+    #landing img#beach {
+      height: 10vh;
+    }
+    .wave {
+      height: 8.5vh;
+    }
+  }
+}

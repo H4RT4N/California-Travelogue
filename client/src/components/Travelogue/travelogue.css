@@ -1,0 +1,139 @@
+#travelogue {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #0059b3, #001a33);
+  overflow: hidden;
+}
+
+.optionsEnabled {
+  transform: translateY(100px);
+}
+#searchbar.wrapper,
+.pagination,
+.postContainer {transition: transform 0.5s ease-in-out;}
+.appbar.options{
+  position: absolute;
+  top: 100px;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.appbar.options.enabled{
+  opacity: 1;
+}
+.btn-leave {
+  opacity: 1;
+}
+
+.btn-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+
+.postContainer {
+  padding-bottom: 100px;
+  height: 100vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#searchForm .formGroup .inputBox input { color: white }
+#searchForm .formGroup .inputBox .line { background: #001a33 }
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 45px;
+  background: #001a33;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.dropdown span {
+  position: absolute;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+.dropdown span.show { opacity: 0 }
+.dropdown .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 100px;
+  height: 0;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: -1;
+  transition: 0.5s ease-in-out;
+}
+.dropdown .content.show {
+  height: 200px;
+  opacity: 1;
+  z-index: 1;
+}
+.dropdown .content span {
+  position: relative;
+  color: #001a33;
+  margin: 5px;
+}
+#searchbar a {
+  margin: 20px;
+  text-decoration: none;
+  color: #001a33;
+  font-size: 2em;
+  transition: 0.5s ease-in-out;
+}
+#searchbar a:hover { color: white }
+
+.btn.paginate {
+  padding: 0;
+  margin: 40px 30px;
+  background: none;
+  border: none;
+  color: #001a33;
+  font-size: 2em;
+  transition: 0.5s ease-in-out;
+}
+.btn.paginate:hover {
+  color: white;
+}
+.btn.paginate:disabled {
+  color: #494949;
+}
+
+#formOverlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+#fullOverlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 80%;
+  background: linear-gradient(to bottom, #0059b3, #001a33);
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .dropdown,
+  .dropdown .content { width: 80px }
+}
